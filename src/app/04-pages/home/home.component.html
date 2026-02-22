@@ -1,0 +1,23 @@
+<div class="hero">
+  <div class="hero-content">
+    <img src="assets/images/logo.png" alt="Bendición de Dios Logo" class="main-logo">
+    <p>El verdadero sabor salvadoreño en cada pupusa.</p>
+    <a routerLink="/menu" class="cta-button">Ver Menú</a>
+  </div>
+</div>
+
+<section class="featured">
+  <h2>Nuestros Favoritos</h2>
+  <div class="products-grid">
+    @for (product of popularProducts(); track product.id) {
+      <div class="product-card">
+        <img [src]="product.image" [alt]="product.name">
+        <div class="card-body">
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.description }}</p>
+          <div class="price">{{ product.price | currency }}</div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

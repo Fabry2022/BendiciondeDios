@@ -1,0 +1,31 @@
+<div class="menu-container">
+    <aside class="filters">
+        <h3>Categorías</h3>
+        <button [class.active]="selectedCategory() === 'all'" (click)="selectedCategory.set('all')">
+            Todas
+        </button>
+        @for (category of categories(); track category.id) {
+        <button [class.active]="selectedCategory() === category.id" (click)="selectedCategory.set(category.id)">
+            {{ category.name }}
+        </button>
+        }
+    </aside>
+
+    <div class="products-grid">
+        @for (product of filteredProducts(); track product.id) {
+        <div class="product-card">
+            <img [src]="product.image" [alt]="product.name">
+            <div class="card-body">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <div class="card-footer">
+                    <span class="price">${{ product.price.toFixed(2) }}</span>
+                    <button (click)="addToCart(product)" class="add-btn">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

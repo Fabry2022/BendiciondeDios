@@ -1,0 +1,34 @@
+<div class="admin-page">
+    <div class="header">
+        <h1>Productos</h1>
+        <a routerLink="new" class="btn-primary">Nuevo Producto</a>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (product of products(); track product.id) {
+                <tr>
+                    <td><img [src]="product.image" class="thumb"></td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.categoryId }}</td>
+                    <td>${{ product.price.toFixed(2) }}</td>
+                    <td class="actions">
+                        <a [routerLink]="['edit', product.id]" class="btn-edit">Editar</a>
+                        <button (click)="deleteProduct(product.id)" class="btn-delete">Eliminar</button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

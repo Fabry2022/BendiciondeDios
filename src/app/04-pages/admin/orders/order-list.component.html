@@ -1,0 +1,35 @@
+<div class="admin-page">
+    <h1>Órdenes</h1>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (order of orders(); track order.id) {
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.date | date:'short' }}</td>
+                    <td>
+                        <span class="status" [class]="order.status">{{ order.status }}</span>
+                    </td>
+                    <td>${{ order.total.toFixed(2) }}</td>
+                    <td>
+                        @if (order.status === 'pending') {
+                        <button (click)="updateStatus(order.id, 'completed')" class="btn-complete">Completar</button>
+                        <button (click)="updateStatus(order.id, 'cancelled')" class="btn-cancel">Cancelar</button>
+                        }
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

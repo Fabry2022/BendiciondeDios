@@ -1,0 +1,9 @@
+<div class="admin-page">
+    <h1>Categorías</h1>
+    <!-- Placeholder for full CRUD -->
+    <ul>
+        @for (category of categories(); track category.id) {
+        <li>{{ category.name }}</li>
+        }
+    </ul>
+</div>

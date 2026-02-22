@@ -1,0 +1,57 @@
+<div class="dashboard-container">
+    <h1>Panel de Control</h1>
+
+    <div class="kpi-grid">
+        <div class="kpi-card sales">
+            <h3>Ventas del Día</h3>
+            <div class="value">$1,234.50</div>
+            <div class="trend up">+15% vs ayer</div>
+        </div>
+
+        <div class="kpi-card orders">
+            <h3>Órdenes Recientes</h3>
+            <div class="value">45</div>
+            <div class="trend">12 pendientes</div>
+        </div>
+
+        <div class="kpi-card products">
+            <h3>Productos Activos</h3>
+            <div class="value">{{ products()?.length || 0 }}</div>
+            <div class="trend">En catálogo</div>
+        </div>
+    </div>
+
+    <div class="recent-orders">
+        <h2>Últimas Órdenes</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Mock data for now -->
+                    <tr>
+                        <td>#1023</td>
+                        <td>Juan Perez</td>
+                        <td>$25.50</td>
+                        <td><span class="status completed">Completado</span></td>
+                        <td><button class="btn-sm">Ver</button></td>
+                    </tr>
+                    <tr>
+                        <td>#1024</td>
+                        <td>Maria Garcia</td>
+                        <td>$12.00</td>
+                        <td><span class="status pending">Pendiente</span></td>
+                        <td><button class="btn-sm">Ver</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,236 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Pupusas",
+      "slug": "pupusas"
+    },
+    {
+      "id": "2",
+      "name": "Bebidas",
+      "slug": "bebidas"
+    },
+    {
+      "id": "3",
+      "name": "Postres",
+      "slug": "postres"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Pupusa de Queso",
+      "description": "Deliciosa pupusa rellena de queso local.",
+      "price": 1,
+      "categoryId": "1",
+      "image": "/assets/images/pupusasdequeso.png",
+      "isPopular": true
+    },
+    {
+      "id": "2",
+      "name": "Pupusa Revuelta",
+      "description": "Queso, frijoles y chicharrón.",
+      "price": 1.25,
+      "categoryId": "1",
+      "image": "/assets/images/pupusasrevueltas.png",
+      "isPopular": true
+    },
+    {
+      "id": "3",
+      "name": "Horchata",
+      "description": "Bebida tradicional de morro.",
+      "price": 1.5,
+      "categoryId": "2",
+      "image": "/assets/images/Horchata.jpg",
+      "isPopular": true
+    },
+    {
+      "id": "4",
+      "name": "Quesadilla",
+      "description": "Pan dulce tradicional a base de queso.",
+      "price": 2,
+      "categoryId": "3",
+      "image": "/assets/images/quesadilla.jpg",
+      "isPopular": true
+    },
+    {
+      "id": "5",
+      "name": "Pupusa de Frijol con Queso",
+      "description": "La combinación clásica de frijoles y queso.",
+      "price": 1,
+      "categoryId": "1",
+      "image": "/assets/images/Pupusafrijolyqueso.jpg",
+      "isPopular": false
+    },
+    {
+      "id": "6",
+      "name": "Pupusa de Ayote",
+      "description": "Rellena de ayote rallado y queso.",
+      "price": 1.25,
+      "categoryId": "1",
+      "image": "/assets/images/pupusaayote.jpg",
+      "isPopular": false
+    },
+    {
+      "id": "7",
+      "name": "Pupusa Loca",
+      "description": "Una explosión de todos los ingredientes.",
+      "price": 2.5,
+      "categoryId": "1",
+      "image": "/assets/images/Pupusaloca.jpg",
+      "isPopular": true
+    },
+    {
+      "id": "8",
+      "name": "Pupusa de Loroco",
+      "description": "Con la flor comestible tradicional y queso.",
+      "price": 1.5,
+      "categoryId": "1",
+      "image": "/assets/images/Pupusaloroco.jpg",
+      "isPopular": false
+    },
+    {
+      "id": "9",
+      "name": "Pupusa de Chicharrón",
+      "description": "Solo chicharrón molido sazonado.",
+      "price": 1.25,
+      "categoryId": "1",
+      "image": "/assets/images/Pupusachicharron.jpg",
+      "isPopular": false
+    },
+    {
+      "id": "10",
+      "name": "Refresco de Cebada",
+      "description": "Refrescante bebida rosa sabor fresa y especias.",
+      "price": 1.25,
+      "categoryId": "2",
+      "image": "/assets/images/Cebada.jpg",
+      "isPopular": false
+    },
+    {
+      "id": "11",
+      "name": "Refresco de Ensalada",
+      "description": "Bebida de frutas picadas (piña, marañón, mamey).",
+      "price": 1.5,
+      "categoryId": "2",
+      "image": "/assets/images/Refresco de Ensalada.jpg",
+      "isPopular": true
+    },
+    {
+      "id": "12",
+      "name": "Chocolate Caliente",
+      "description": "Chocolate artesanal batido.",
+      "price": 1.75,
+      "categoryId": "2",
+      "image": "/assets/images/ChocolateCaliente.jpg",
+      "isPopular": false
+    },
+    {
+      "id": "13",
+      "name": "Jugo de Naranja",
+      "description": "Recién exprimido, 100% natural.",
+      "price": 2,
+      "categoryId": "2",
+      "image": "/assets/images/JugodeNaranja.jpg",
+      "isPopular": false
+    },
+    {
+      "id": "14",
+      "name": "Soda",
+      "description": "Variedad de sodas frías.",
+      "price": 1,
+      "categoryId": "2",
+      "image": "/assets/images/soda.jpg",
+      "isPopular": false
+    },
+    {
+      "id": "15",
+      "name": "Empanadas de Leche",
+      "description": "Plátano maduro relleno de manjar blanco.",
+      "price": 0.75,
+      "categoryId": "3",
+      "image": "/assets/images/EmpanadasdeLeche.jpg",
+      "isPopular": true
+    },
+    {
+      "id": "16",
+      "name": "Nuegados de Yuca",
+      "description": "Acompañado de miel de panela.",
+      "price": 2.5,
+      "categoryId": "3",
+      "image": "/assets/images/NuegadosdeYuca.jpg",
+      "isPopular": false
+    },
+    {
+      "id": "17",
+      "name": "Torrejas",
+      "description": "Pan en miel tradicional.",
+      "price": 1.5,
+      "categoryId": "3",
+      "image": "/assets/images/Torrejas.jpg",
+      "isPopular": false
+    },
+    {
+      "id": "18",
+      "name": "Atol de Elote",
+      "description": "Bebida caliente de maíz tierno.",
+      "price": 1.25,
+      "categoryId": "3",
+      "image": "/assets/images/AtoldeElote.jpg",
+      "isPopular": true
+    },
+    {
+      "id": "19",
+      "name": "Pastel de Tres Leches",
+      "description": "Porción de pastel húmedo y dulce.",
+      "price": 3,
+      "categoryId": "3",
+      "image": "/assets/images/PasteldeTresLeches.jpg",
+      "isPopular": false
+    }
+  ],
+  "orders": [
+    {
+      "id": "6629",
+      "date": "2026-02-22T21:48:04.941Z",
+      "items": [
+        {
+          "product": {
+            "id": "1",
+            "name": "Pupusa de Queso",
+            "description": "Deliciosa pupusa rellena de queso local.",
+            "price": 1,
+            "categoryId": "1",
+            "image": "/assets/images/pupusasdequeso.png",
+            "isPopular": true
+          },
+          "quantity": 1
+        }
+      ],
+      "status": "pending",
+      "total": 1,
+      "userId": "Cliente Invitado"
+    },
+    {
+      "id": "49fc",
+      "date": "2026-02-22T21:49:16.066Z",
+      "items": [
+        {
+          "product": {
+            "id": "1",
+            "name": "Pupusa de Queso",
+            "description": "Deliciosa pupusa rellena de queso local.",
+            "price": 1,
+            "categoryId": "1",
+            "image": "/assets/images/pupusasdequeso.png",
+            "isPopular": true
+          },
+          "quantity": 1
+        }
+      ],
+      "status": "pending",
+      "total": 1,
+      "userId": "Cliente Invitado"
+    }
+  ]
+}
