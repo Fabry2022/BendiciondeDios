@@ -1,0 +1,59 @@
+<div class="checkout-container">
+    <h2>Finalizar Pago</h2>
+
+    <div class="visual-card-wrapper">
+        <div class="credit-card" [class.flipped]="isCardFlipped">
+            <div class="chip"></div>
+            <div class="card-number">{{ simulatedNumber || '•••• •••• •••• ••••' }}</div>
+            <div class="card-info">
+                <div>
+                    <div class="label">Titular</div>
+                    <div class="value">{{ simulatedName || 'NOMBRE APELLIDO' }}</div>
+                </div>
+                <div>
+                    <div class="label">Expira</div>
+                    <div class="value">{{ simulatedExpiry || 'MM/AA' }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="simulation-controls">
+        <button type="button" class="sim-btn" (click)="startSimulation()" [disabled]="isSimulating">
+            🚀 Simular Ingreso Real
+        </button>
+        <button type="button" class="sim-btn" (click)="resetSimulation()">
+            🔄 Reiniciar
+        </button>
+    </div>
+
+    <div class="order-summary">
+        <h3>Resumen del Pedido</h3>
+        <div class="summary-row">
+            <span>Productos</span>
+            <span>{{ cartStore.itemsCount() }}</span>
+        </div>
+        <div class="summary-row total">
+            <span>Total a Pagar</span>
+            <span>${{ cartStore.totalCost().toFixed(2) }}</span>
+        </div>
+    </div>
+
+    <form class="payment-form" (submit)="handleSubmit($event)">
+        <div id="card-element">
+            <!-- Stripe Element se insertará aquí -->
+        </div>
+        <div id="card-errors" role="alert">{{ cardErrorMessage }}</div>
+
+        <button type="submit" class="submit-btn" [disabled]="isProcessing || cartStore.itemsCount() === 0">
+            {{ isProcessing ? 'Procesando...' : 'Pagar Ahora' }}
+        </button>
+    </form>
+</div>
+
+@if (isProcessing) {
+<div class="processing-overlay">
+    <div class="spinner"></div>
+    <p>Estamos procesando tu pago de forma segura...</p>
+</div>
+}

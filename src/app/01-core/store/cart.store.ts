@@ -10,6 +10,9 @@ export class CartStore {
     private readonly _cartItems = signal<CartItem[]>([]);
     readonly cartItems = this._cartItems.asReadonly();
 
+    private readonly _paymentStatus = signal<'idle' | 'processing' | 'success' | 'error'>('idle');
+    readonly paymentStatus = this._paymentStatus.asReadonly();
+
     private orderService = inject(OrderService);
 
     readonly totalCost = computed(() =>
@@ -62,35 +65,27 @@ export class CartStore {
             throw new Error('Cart is empty');
         }
 
-        const newOrder: Omit<Order, 'id'> = {
-            date: new Date().toISOString(),
-            items: this._cartItems(), // Current state snapshot
-            status: 'pending',
-            total: this.totalCost(),
-            customerName: customerName
-        } as any; // Using 'any' briefly because I need to check if customerName exists on Order interface, looks like it doesn't. 
-        // Wait, I should add customerName to the interface first to be safe, but user didn't ask me to modify models explicitly. 
-        // I'll stick to what exists or extend it properly. Let's start by NOT adding customerName to Order if it's not there, 
-        // or use userId since it is optional. Let's use `userId` as a placeholder for customer name for now to avoid breaking changes without modifying model file.
+        this._paymentStatus.set('processing');
 
-        // Re-doing the order object based on existing Interface
         const orderPayload: Omit<Order, 'id'> = {
             date: new Date().toISOString(),
-            items: [...this._cartItems()], // Clone for safety
+            items: [...this._cartItems()],
             status: 'pending',
             total: this.totalCost(),
-            userId: customerName // Mapping customer name to userId for now
+            userId: customerName
         };
 
         return this.orderService.createOrder(orderPayload).pipe(
             tap({
                 next: () => {
-                    // Commit: Only clear cart if order creation succeeds
+                    this._paymentStatus.set('success');
                     this.clearCart();
+                    setTimeout(() => this._paymentStatus.set('idle'), 3000);
                 },
                 error: (err) => {
-                    // Rollback: Cart remains intact
+                    this._paymentStatus.set('error');
                     console.error('Checkout failed, keeping cart state', err);
+                    setTimeout(() => this._paymentStatus.set('idle'), 3000);
                 }
             })
         );

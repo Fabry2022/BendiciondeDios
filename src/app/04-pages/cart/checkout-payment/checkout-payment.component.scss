@@ -1,0 +1,195 @@
+@import '../../../../styles.scss';
+
+.checkout-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    h2 {
+        color: #333;
+        margin-bottom: 24px;
+        text-align: center;
+        font-weight: 700;
+    }
+}
+
+.visual-card-wrapper {
+    perspective: 1000px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.credit-card {
+    width: 350px;
+    height: 200px;
+    background: linear-gradient(135deg, #635bff 0%, #212d63 100%);
+    border-radius: 15px;
+    padding: 25px;
+    color: white;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+
+    &.flipped {
+        transform: rotateY(180deg);
+    }
+
+    .chip {
+        width: 45px;
+        height: 35px;
+        background: linear-gradient(135deg, #f0d07d 0%, #cf9f2d 100%);
+        border-radius: 5px;
+        margin-bottom: 25px;
+    }
+
+    .card-number {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+        height: 1.6rem;
+    }
+
+    .card-info {
+        display: flex;
+        justify-content: space-between;
+
+        .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .value {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+}
+
+.simulation-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    .sim-btn {
+        flex: 1;
+        padding: 10px;
+        background: #f0f2f5;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+
+        &:hover {
+            background: #e4e6e9;
+        }
+    }
+}
+
+.order-summary {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+
+    h3 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+
+    .summary-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        &.total {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #333;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.payment-form {
+    #card-element {
+        padding: 12px;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        background: white;
+        margin-bottom: 20px;
+    }
+
+    #card-errors {
+        color: #dc3545;
+        font-size: 0.9rem;
+        margin-top: -10px;
+        margin-bottom: 20px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 14px;
+        background: #635bff; // Stripe Purple
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+
+        &:hover {
+            background: #4b45cc;
+        }
+
+        &:disabled {
+            background: #aab7c4;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.processing-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #635bff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

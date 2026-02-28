@@ -22,19 +22,6 @@ export class CartComponent {
   }
 
   checkout() {
-    // In a real app, this would be a form.
-    // For this architectural demo, we simulate a guest checkout.
-    const customerName = 'Cliente Invitado';
-
-    this.cartStore.checkout(customerName).subscribe({
-      next: () => {
-        alert('¡Orden creada con éxito! El carrito se ha limpiado.');
-        this.router.navigate(['/']);
-      },
-      error: (err) => {
-        alert('Error al crear la orden. Por favor intente de nuevo.');
-        console.error(err);
-      }
-    });
+    this.router.navigate(['/checkout']);
   }
 }

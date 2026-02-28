@@ -17,6 +17,18 @@ export const routes: Routes = [
             {
                 path: 'cart',
                 loadComponent: () => import('./04-pages/cart/cart.component').then(m => m.CartComponent)
+            },
+            {
+                path: 'checkout',
+                loadComponent: () => import('./04-pages/cart/checkout-payment/checkout-payment.component').then(m => m.CheckoutPaymentComponent)
+            },
+            {
+                path: 'checkout/success',
+                loadComponent: () => import('./04-pages/cart/checkout-success/checkout-success.component').then(m => m.CheckoutSuccessComponent)
+            },
+            {
+                path: 'checkout/cancel',
+                loadComponent: () => import('./04-pages/cart/checkout-cancel/checkout-cancel.component').then(m => m.CheckoutCancelComponent)
             }
         ]
     },
